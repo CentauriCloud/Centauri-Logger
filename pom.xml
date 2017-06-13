@@ -11,10 +11,18 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 	
+	<repositories>
+      <!-- Xephi repository -->
+      <repository>
+        <id>xephi-repo</id>
+        <url>http://ci.xephi.fr/plugin/repository/everything/</url>
+      </repository>
+    </repositories>
+	
     <dependencies>
       <dependency>
         <groupId>org.centauri.cloud</groupId>
-        <artifactId>opencloud-master</artifactId>
+        <artifactId>centauricloud-master</artifactId>
         <version>1.0-SNAPSHOT</version>
 		<scope>provided</scope>
       </dependency>
@@ -29,6 +37,19 @@
         <artifactId>log4j-api</artifactId>
         <version>2.8.2</version>
 		<scope>provided</scope>
+      </dependency>
+	  <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>1.18</version>
+		<scope>compile</scope>
+      </dependency>
+	  <!-- YAML wrapper library -->
+      <dependency>
+        <groupId>com.timvisee</groupId>
+        <artifactId>yamlwrapper</artifactId>
+        <version>1.1.1</version>
+		<scope>compile</scope>
       </dependency>
     </dependencies>
 	
