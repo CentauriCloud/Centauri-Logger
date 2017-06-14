@@ -1,1 +1,12 @@
-
+consoleCommand:
+    console: true
+    log: false
+serverConnect:
+    console: true
+    log: false
+serverDisconnect:
+    console: true
+    log: false
+serverDeny:
+    console: true
+    log: false

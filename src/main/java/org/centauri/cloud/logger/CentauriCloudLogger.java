@@ -10,13 +10,18 @@ import org.centauri.cloud.logger.listener.EventListener;
 @Log4j2
 public class CentauriCloudLogger extends AbstractModule {
 	
+	@Getter private static CentauriCloudLogger instance;
 	@Getter private Config config;
 	
 	@Override
 	public void onEnable() {
+		instance = this;
+		
 		Cloud.getInstance().getEventManager().registerEventHandler(new EventListener());
 		try {
 			this.config = new Config();
+			this.config.loadDefaults();
+			this.config.loadValues();
 		} catch (Exception ex) {
 			this.log.catching(ex);
 		}
