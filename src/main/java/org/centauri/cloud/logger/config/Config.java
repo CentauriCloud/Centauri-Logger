@@ -19,6 +19,7 @@ public class Config {
 	@LogAble private LoggerSetting serverConnect;
 	@LogAble private LoggerSetting serverDisconnect;
 	@LogAble private LoggerSetting serverDeny;
+	@LogAble private LoggerSetting serverLoad;
 	
 	public Config() throws Exception {
 		new File("modules/CentauriCloudLogger/").mkdir();

@@ -10,3 +10,6 @@ serverDisconnect:
 serverDeny:
     console: true
     log: false
+serverLoad:
+    console: false
+    log: false

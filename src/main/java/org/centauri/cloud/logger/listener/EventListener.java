@@ -1,7 +1,9 @@
 package org.centauri.cloud.logger.listener;
 
 import lombok.extern.log4j.Log4j2;
+import org.apache.commons.io.FileUtils;
 import org.centauri.cloud.cloud.event.Listener;
+import org.centauri.cloud.cloud.event.events.DaemonLoadEvent;
 import org.centauri.cloud.cloud.event.events.ServerConnectEvent;
 import org.centauri.cloud.cloud.event.events.ServerDenyEvent;
 import org.centauri.cloud.cloud.event.events.ServerDisconnectEvent;
@@ -29,6 +31,12 @@ public class EventListener {
 	public void onServerDeny(ServerDenyEvent event) {
 		if(config.getServerDeny().isConsole())
 			this.log.info("Server connection denied: {}", event.getHost());
+	}
+	
+	@Listener
+	public void onServerLoad(DaemonLoadEvent event) {
+		if(config.getServerLoad().isConsole())
+			this.log.info("Server: {} | CpuLoad: {} | free Ram: {}",event.getServer().getName(), event.getCpuLoad(), FileUtils.byteCountToDisplaySize(event.getFreeRam()));
 	}
 	
 }
