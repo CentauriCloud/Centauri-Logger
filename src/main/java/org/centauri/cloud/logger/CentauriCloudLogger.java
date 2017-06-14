@@ -17,7 +17,6 @@ public class CentauriCloudLogger extends AbstractModule {
 	public void onEnable() {
 		instance = this;
 		
-		Cloud.getInstance().getEventManager().registerEventHandler(new EventListener());
 		try {
 			this.config = new Config();
 			this.config.loadDefaults();
@@ -25,6 +24,9 @@ public class CentauriCloudLogger extends AbstractModule {
 		} catch (Exception ex) {
 			this.log.catching(ex);
 		}
+		
+		Cloud.getInstance().getEventManager().registerEventHandler(new EventListener());
+
 		this.log.info("CentauriCloudLogger enabled!");
 	}
 	
