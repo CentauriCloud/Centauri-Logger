@@ -13,3 +13,6 @@ serverDeny:
 serverLoad:
     console: false
     log: false
+requestServer:
+    console: false
+    log: false

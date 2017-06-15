@@ -7,6 +7,7 @@ import org.centauri.cloud.cloud.event.events.DaemonLoadEvent;
 import org.centauri.cloud.cloud.event.events.ServerConnectEvent;
 import org.centauri.cloud.cloud.event.events.ServerDenyEvent;
 import org.centauri.cloud.cloud.event.events.ServerDisconnectEvent;
+import org.centauri.cloud.cloud.event.events.RequestServerEvent;
 import org.centauri.cloud.logger.CentauriCloudLogger;
 import org.centauri.cloud.logger.config.Config;
 
@@ -37,6 +38,12 @@ public class EventListener {
 	public void onServerLoad(DaemonLoadEvent event) {
 		if(config.getServerLoad().isConsole())
 			this.log.info("Server: {} | CpuLoad: {} | free Ram: {}",event.getServer().getName(), event.getCpuLoad(), FileUtils.byteCountToDisplaySize(event.getFreeRam()));
+	}
+	
+	@Listener
+	public void onRequestServer(RequestServerEvent event) {
+		if(config.getRequestServer().isConsole())
+			this.log.info("Request server for template {}!", event.getTemplate().getName());
 	}
 	
 }
