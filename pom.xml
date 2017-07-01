@@ -56,7 +56,7 @@
     </dependencies>
 
     <build>
-        <finalName>CentauriCloudLogger.jar</finalName>
+        <finalName>CentauriCloudLogger</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
